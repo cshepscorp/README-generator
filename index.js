@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
+const fs = require('fs'); 
 const inquirer = require('inquirer');
+const generatePage = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 //const questions = [];
@@ -129,16 +131,62 @@ const questions = () => {
           }
         }
       }
-    ]);
+    ])
   };
 
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, err => {
+//         if (err) {
+//             return console.log(err);
+//         }
+
+//         console.log("Your README file (index.html) has been successfully generated!")
+//     })
+// }
+
+const writeToFile = data => {
+    fs.writeFile('README.md', data, err => {
+                if (err) {
+                    return console.log(err);
+                }
+        
+                console.log("Your README file (index.html) has been successfully generated!")
+            })
+};
 
 // // TODO: Create a function to initialize app
-// function init() {}
+questions()
+    
+    .then(questionData => {
+        // finished portfolio data object is returned as questionData
+        // and sent into the generatePage() function
+        return generatePage(questionData);
+    })
+    .then(data => {
+        return writeToFile(data);
+    })
+
 
 // // Function call to initialize app
-// init();
+//init();
 
-questions();
+// questions()
+//     .then(questionData => {
+//     // finished portfolio data object is returned as questionData
+//     // and sent into the generatePage() function
+//     return generatePage(questionData);
+//     })
+//     .then(pageHTML => {
+//         // pass pageHTML into the newly created writeFile() function,
+//         // which returns a Promise
+//         // we use return here, so the Promise is returned into the next .then() method
+//         return writeFile(pageHTML);
+//     });
+//     // const pageHTML = generatePage(questionData);
+
+    // fs.writeFile('./index.html', pageHTML, err => {
+    //   if (err) throw new Error(err);
+
+    //   console.log('Page created! Check out index.html in this directory to see it!');
+    // });
