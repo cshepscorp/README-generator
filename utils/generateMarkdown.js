@@ -2,29 +2,57 @@ const fs = require('fs');
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+let chosenLicense;
+let chosenLicenseInfo;
+function renderLicenseBadge(license) {
+  if (license === "MIT") {
+    chosenLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+  }
+  if (license === "GPL (GNU)") {
+    chosenLicense = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+  }
+  if (license === "Apache 2.0") {
+    chosenLicense = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+  }
+  if (license === "No license") {
+    chosenLicense = ` `
+  }
+  return chosenLicense;
+}
 
+renderLicenseBadge();
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === "MIT") {
+    chosenLicenseInfo = `A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
+  }
+  return chosenLicenseInfo;
+  
+}
+renderLicenseSection();
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  const licenseBadge = renderLicenseBadge(`${data.license}`);
+  const licenseInfo = renderLicenseSection(`${data.license}`);
+  return `
+  
+  # ${data.title} ${licenseBadge}
 
   ## Table of Contents
-  1. [ Description ](#about)
-  2. [ Installation ](#installation)
-  3. [ Usage ](#usage)
-  4. [ License ](#license)
-  5. [ Badges ](#badges)
-  6. [ Test Instructions ](#test)
-  7. [ Contributing ](#contribution)
-  8. [ Questions ](#questions)
+  * [ Description ](#about)
+  * [ Installation ](#installation)
+  * [ Usage ](#usage)
+  * [ License ](#license)
+  * [ Badges ](#badges)
+  * [ Test Instructions ](#test)
+  * [ Contributing ](#contribution)
+  * [ Questions ](#questions)
 
   <a name="about"></a>
   ## Description
@@ -48,11 +76,7 @@ function generateMarkdown(data) {
 
   <a name="license"></a>
   ## License
-  ${data.licenses}
-
-  <a name="badges"></a>
-  ## Badges
-  ${data.langauges}
+  ###${data.license} - ${licenseInfo}
 
   <a name="questions"></a>
   ## Questions

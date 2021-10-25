@@ -61,7 +61,7 @@ const questions = () => {
       },
       {
         type: 'input',
-        name: 'constribution',
+        name: 'contribution',
         message: 'Provide contribution guidelines for your project:',
         validate: constributionInput => {
             if (constributionInput) {
@@ -87,7 +87,7 @@ const questions = () => {
       },
       {
         type: 'list',
-        name: 'licenses',
+        name: 'license',
         message: 'This project is licensed with:',
         choices: ['MIT', 'GPL (GNU)', 'Apache 2.0', 'No license'],
         validate: licenseInput => {
@@ -99,12 +99,12 @@ const questions = () => {
             }
           }
       },
-      {
-        type: 'checkbox',
-        name: 'languages',
-        message: 'What languages did you create this project with? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-      },
+    //   {
+    //     type: 'checkbox',
+    //     name: 'languages',
+    //     message: 'What languages did you create this project with? (Check all that apply)',
+    //     choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+    //   },
       {
         type: 'input',
         name: 'github',
@@ -146,7 +146,7 @@ const questions = () => {
 // }
 
 const writeToFile = data => {
-    fs.writeFile('README.md', data, err => {
+    fs.writeFile('./dist/README.md', data, err => {
                 if (err) {
                     return console.log(err);
                 }
