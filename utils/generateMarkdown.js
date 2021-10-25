@@ -4,6 +4,7 @@ const fs = require('fs');
 // If there is no license, return an empty string
 let chosenLicense;
 let chosenLicenseInfo;
+let chosenLicenseLink;
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     chosenLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
@@ -23,13 +24,31 @@ function renderLicenseBadge(license) {
 renderLicenseBadge();
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === "MIT") {
+    chosenLicenseLink = `[Read more about the MIT license](https://choosealicense.com/licenses/mit/)`
+  }
+  if (license === "GPL (GNU)") {
+    chosenLicenseLink = `[Read more about the GPL (GNU) license](https://choosealicense.com/licenses/gpl-3.0/)`
+  }
+  if (license === "Apache 2.0") {
+    chosenLicenseLink = `[Read more about the Apache 2.0 license](https://choosealicense.com/licenses/apache-2.0/)`
+  }
+  return chosenLicenseLink;
+}
+renderLicenseLink();
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === "MIT") {
     chosenLicenseInfo = `A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
+  }
+  if (license === "GPL (GNU)") {
+    chosenLicenseInfo = `Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.`
+  }
+  if (license === "Apache 2.0") {
+    chosenLicenseInfo = `A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
   }
   return chosenLicenseInfo;
   
@@ -40,6 +59,7 @@ renderLicenseSection();
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(`${data.license}`);
   const licenseInfo = renderLicenseSection(`${data.license}`);
+  const licenseLink = renderLicenseLink(`${data.license}`);
   return `
   
   # ${data.title} ${licenseBadge}
@@ -76,7 +96,7 @@ function generateMarkdown(data) {
 
   <a name="license"></a>
   ## License
-  ###${data.license} - ${licenseInfo}
+  ${data.license} - ${licenseInfo} (${licenseLink})
 
   <a name="questions"></a>
   ## Questions
