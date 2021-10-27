@@ -23,7 +23,7 @@ const questions = () => {
       {
         type: 'input',
         name: 'about',
-        message: 'Provide some information about your project:',
+        message: 'Provide some a description of your project (Required):',
         validate: aboutInput => {
             if (aboutInput) {
               return true;
@@ -36,7 +36,7 @@ const questions = () => {
       {
         type: 'input',
         name: 'instructions',
-        message: 'Provide installation instructions for your project:',
+        message: 'Provide installation instructions for your project (Required):',
         validate: instructionsInput => {
             if (instructionsInput) {
               return true;
@@ -49,7 +49,7 @@ const questions = () => {
       {
         type: 'input',
         name: 'usage',
-        message: 'Provide usage information for your project:',
+        message: 'Provide usage information for your project (Required):',
         validate: usageInput => {
             if (usageInput) {
               return true;
@@ -63,32 +63,32 @@ const questions = () => {
         type: 'input',
         name: 'contribution',
         message: 'Provide contribution guidelines for your project:',
-        validate: constributionInput => {
-            if (constributionInput) {
-              return true;
-            } else {
-              console.log('Please enter project contribution guidelines.');
-              return false;
-            }
-          }
+        // validate: constributionInput => {
+        //     if (constributionInput) {
+        //       return true;
+        //     } else {
+        //       console.log('Please enter project contribution guidelines.');
+        //       return false;
+        //     }
+        //   }
       },
       {
         type: 'input',
         name: 'test',
         message: 'Provide test instructions for your project:',
-        validate: testInput => {
-            if (testInput) {
-              return true;
-            } else {
-              console.log('Please enter project test instructions.');
-              return false;
-            }
-          }
+        // validate: testInput => {
+        //     if (testInput) {
+        //       return true;
+        //     } else {
+        //       console.log('Please enter project test instructions.');
+        //       return false;
+        //     }
+        //   }
       },
       {
         type: 'list',
         name: 'license',
-        message: 'This project is licensed with:',
+        message: 'This project is licensed with (Required):',
         choices: ['MIT', 'GPL (GNU)', 'Apache 2.0', 'No license'],
         validate: licenseInput => {
             if (licenseInput) {
@@ -99,12 +99,6 @@ const questions = () => {
             }
           }
       },
-    //   {
-    //     type: 'checkbox',
-    //     name: 'languages',
-    //     message: 'What languages did you create this project with? (Check all that apply)',
-    //     choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-    //   },
       {
         type: 'input',
         name: 'github',
@@ -151,7 +145,7 @@ const writeToFile = data => {
                     return console.log(err);
                 }
         
-                console.log("Your README file (index.html) has been successfully generated!")
+                console.log("Your README file (/dist/README.md) has been successfully generated!")
             })
 };
 

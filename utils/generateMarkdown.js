@@ -5,6 +5,69 @@ const fs = require('fs');
 let chosenLicense;
 let chosenLicenseInfo;
 let chosenLicenseLink;
+
+
+
+
+
+
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  const licenseBadge = renderLicenseBadge(`${data.license}`);
+  const licenseInfo = renderLicenseSection(`${data.license}`);
+  const licenseLink = renderLicenseLink(`${data.license}`);
+  const testToc = renderTestSectionToc(`${data.test}`);
+  const testInfo = renderTestSection(`${data.test}`);
+  const contToc = renderContSectionToc(`${data.contribution}`);
+  const contInfo = renderContSection(`${data.contribution}`);
+  return `
+  
+  # ${data.title} ${licenseBadge}
+
+  ## Table of Contents
+  * [ Description ](#about)
+  * [ Installation ](#installation)
+  * [ Usage ](#usage)
+  * [ License ](#license)
+  * [ Badges ](#badges)
+  ${testToc}
+  ${contToc}
+  * [ Questions ](#questions)
+
+  <a name="about"></a>
+  ## Description
+  ${data.about}
+
+  <a name="installation"></a>
+  ## Installation
+  ${data.instructions}
+
+  <a name="usage"></a>
+  ## Usage
+  ${data.usage}
+
+  ${testInfo}
+  ${data.test}
+
+  ${contInfo}
+  ${data.contribution}
+  
+  <a name="license"></a>
+  ## License
+  ${data.license} - ${licenseInfo} (${licenseLink})
+
+  <a name="questions"></a>
+  ## Questions
+  Feel free to reach out to me with any additional questions
+  * [Find me on GitHub](https://github.com/${data.github}/)
+  * Email me at: ${data.email}
+`;
+}
+
+module.exports = generateMarkdown;
+
+
+// what kind of license did the user choose
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     chosenLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
@@ -23,7 +86,6 @@ function renderLicenseBadge(license) {
 
 renderLicenseBadge();
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "MIT") {
     chosenLicenseLink = `[Read more about the MIT license](https://choosealicense.com/licenses/mit/)`
@@ -39,7 +101,6 @@ function renderLicenseLink(license) {
 renderLicenseLink();
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === "MIT") {
     chosenLicenseInfo = `A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
@@ -50,60 +111,52 @@ function renderLicenseSection(license) {
   if (license === "Apache 2.0") {
     chosenLicenseInfo = `A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.`
   }
+  if (license === "No license") {
+    chosenLicenseInfo = `This project is not licensed and you may do with it whatever you would like.`
+  }
+
+  
   return chosenLicenseInfo;
   
 }
 renderLicenseSection();
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  const licenseBadge = renderLicenseBadge(`${data.license}`);
-  const licenseInfo = renderLicenseSection(`${data.license}`);
-  const licenseLink = renderLicenseLink(`${data.license}`);
-  return `
-  
-  # ${data.title} ${licenseBadge}
-
-  ## Table of Contents
-  * [ Description ](#about)
-  * [ Installation ](#installation)
-  * [ Usage ](#usage)
-  * [ License ](#license)
-  * [ Badges ](#badges)
-  * [ Test Instructions ](#test)
-  * [ Contributing ](#contribution)
-  * [ Questions ](#questions)
-
-  <a name="about"></a>
-  ## Description
-  ${data.about}
-
-  <a name="installation"></a>
-  ## Installation
-  ${data.instructions}
-
-  <a name="usage"></a>
-  ## Usage
-  ${data.usage}
-
-  <a name="contribution"></a>
-  ## Contributing
-  ${data.contribution}
-
-  <a name="test"></a>
-  ## Tests
-  ${data.test}
-
-  <a name="license"></a>
-  ## License
-  ${data.license} - ${licenseInfo} (${licenseLink})
-
-  <a name="questions"></a>
-  ## Questions
-  Feel free to reach out to me with any additional questions
-  * [Find me on GitHub](https://github.com/${data.github}/)
-  * Email me at: ${data.email}
-`;
+// if user inputs test information
+function renderTestSectionToc(test) {
+  if(test) {
+    return `* [ Test Instructions ](#test)`
+  } else {
+    return ``
+  }
 }
+renderTestSectionToc();
 
-module.exports = generateMarkdown;
+function renderTestSection(test) {
+  if(test) {
+  return `<a name="test"></a>
+  ## Tests`
+  } else {
+    return ``
+  }
+}
+renderTestSection();
+
+// if user inputs contribution information
+function renderContSectionToc(contribution) {
+  if(contribution) {
+    return `* [ Contributing ](#contribution)`
+  } else {
+    return ``
+  }
+}
+renderContSectionToc();
+
+function renderContSection(contribution) {
+  if(contribution) {
+  return `<a name="contribution"></a>
+  ## Contributing`
+  } else {
+    return ``
+  }
+}
+renderContSection();
