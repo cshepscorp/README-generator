@@ -20,6 +20,10 @@
   4. In order to run this application, you'll need to install the Inquirer package via npm - this was installed when you installed Node.js. Enter the following code in your command line to install Inquirer: `npm install inquirer`
   5. Enter this code in your command line to run the generator: `node index.js` and fill out the questions as prompted. Your finished README file will be generated and can be located in the dist/ folder.
 
+  <a name="usage"></a>
+  ## Usage
+  ![Screenshot of App Functionality](/assets/images/screenshot-readme-generator.jpg)
+
   <a name="license"></a>
   ## License
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
