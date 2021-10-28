@@ -63,27 +63,11 @@ const questions = () => {
         type: 'input',
         name: 'contribution',
         message: 'Provide contribution guidelines for your project:',
-        // validate: constributionInput => {
-        //     if (constributionInput) {
-        //       return true;
-        //     } else {
-        //       console.log('Please enter project contribution guidelines.');
-        //       return false;
-        //     }
-        //   }
       },
       {
         type: 'input',
         name: 'test',
         message: 'Provide test instructions for your project:',
-        // validate: testInput => {
-        //     if (testInput) {
-        //       return true;
-        //     } else {
-        //       console.log('Please enter project test instructions.');
-        //       return false;
-        //     }
-        //   }
       },
       {
         type: 'list',
@@ -128,17 +112,6 @@ const questions = () => {
     ])
   };
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, err => {
-//         if (err) {
-//             return console.log(err);
-//         }
-
-//         console.log("Your README file (index.html) has been successfully generated!")
-//     })
-// }
-
 const writeToFile = data => {
     fs.writeFile('./dist/README.md', data, err => {
                 if (err) {
@@ -149,7 +122,7 @@ const writeToFile = data => {
             })
 };
 
-// // TODO: Create a function to initialize app
+// initialize app questions
 questions()
     
     .then(questionData => {
@@ -161,26 +134,3 @@ questions()
         return writeToFile(data);
     })
 
-
-// // Function call to initialize app
-//init();
-
-// questions()
-//     .then(questionData => {
-//     // finished portfolio data object is returned as questionData
-//     // and sent into the generatePage() function
-//     return generatePage(questionData);
-//     })
-//     .then(pageHTML => {
-//         // pass pageHTML into the newly created writeFile() function,
-//         // which returns a Promise
-//         // we use return here, so the Promise is returned into the next .then() method
-//         return writeFile(pageHTML);
-//     });
-//     // const pageHTML = generatePage(questionData);
-
-    // fs.writeFile('./index.html', pageHTML, err => {
-    //   if (err) throw new Error(err);
-
-    //   console.log('Page created! Check out index.html in this directory to see it!');
-    // });
