@@ -1,6 +1,6 @@
 
   
-  # skagds ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  # Project Name [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
   ## Table of Contents
   * [ Description ](#about)
@@ -14,29 +14,31 @@
 
   <a name="about"></a>
   ## Description
-  ghaslghsd
+  Description of Project
 
   <a name="installation"></a>
   ## Installation
-  ghasdklhg
+  Installation instructions
 
   <a name="usage"></a>
   ## Usage
-  hgaksldg
+  Usage information
 
   <a name="test"></a>
   ## Tests
-  hlgasdkg
-  
+  How to test
+
   <a name="contribution"></a>
   ## Contributing
-  ghkasdg
+  How to contribute
+  
   <a name="license"></a>
   ## License
-  MIT - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. ([Read more about the MIT license](https://choosealicense.com/licenses/mit/))
+  GPL (GNU) - Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. ([Read more about the GPL (GNU) license](https://choosealicense.com/licenses/gpl-3.0/))
 
   <a name="questions"></a>
   ## Questions
   Feel free to reach out to me with any additional questions
-  * [Find me on GitHub](https://github.com/name/)
-  * Email me at: emia
+  * [Find me on GitHub](https://github.com/github/)
+  * Email me at: contact@gmail.com
+c
