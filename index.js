@@ -15,7 +15,7 @@ const questions = () => {
           if (titleInput) {
             return true;
           } else {
-            console.log('Please enter your project title!');
+            console.log('Please enter a project title');
             return false;
           }
         }
@@ -23,12 +23,12 @@ const questions = () => {
       {
         type: 'input',
         name: 'about',
-        message: 'Provide some a description of your project (Required):',
+        message: 'Provide a description of your project (Required):',
         validate: aboutInput => {
             if (aboutInput) {
               return true;
             } else {
-              console.log('Please enter a project description!');
+              console.log('Please enter a project description');
               return false;
             }
           }
@@ -41,7 +41,7 @@ const questions = () => {
             if (instructionsInput) {
               return true;
             } else {
-              console.log('Please enter project installation instructions.');
+              console.log('Please enter project installation instructions');
               return false;
             }
           }
@@ -54,7 +54,7 @@ const questions = () => {
             if (usageInput) {
               return true;
             } else {
-              console.log('Please enter project usage information.');
+              console.log('Please enter project usage information');
               return false;
             }
           }
@@ -78,7 +78,7 @@ const questions = () => {
             if (licenseInput) {
               return true;
             } else {
-              console.log('Please enter licensing information.');
+              console.log('Please enter licensing information');
               return false;
             }
           }
@@ -91,7 +91,7 @@ const questions = () => {
           if (githubInput) {
             return true;
           } else {
-            console.log('Please enter your GitHub username!');
+            console.log('Please enter your GitHub username');
             return false;
           }
         }
@@ -104,7 +104,7 @@ const questions = () => {
           if (emailInput) {
             return true;
           } else {
-            console.log('Please enter your email.');
+            console.log('Please enter your email address');
             return false;
           }
         }
