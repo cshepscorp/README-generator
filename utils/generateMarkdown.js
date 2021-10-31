@@ -6,11 +6,6 @@ let chosenLicense;
 let chosenLicenseInfo;
 let chosenLicenseLink;
 
-
-
-
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(`${data.license}`);
@@ -66,7 +61,6 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
-
 // what kind of license did the user choose
 function renderLicenseBadge(license) {
   if (license === "MIT") {
@@ -115,7 +109,6 @@ function renderLicenseSection(license) {
     chosenLicenseInfo = `This project is not licensed and you may do with it whatever you would like.`
   }
 
-  
   return chosenLicenseInfo;
   
 }
