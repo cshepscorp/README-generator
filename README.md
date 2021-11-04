@@ -15,7 +15,7 @@
   ## Installation
   [Click to watch the following video for installation instructions.](https://watch.screencastify.com/v/d4tYmB51vLbXLK4NCQKk) 
   1. If you don't already have Node.js installed, [click here to download Node.js on your machine.](https://nodejs.org/en/)
-  2. Once you have Node.js successfully installed, copy the code link from this repo and use the `git clone https://github.com/yourusername/README-generator.git` command to clone this repo into the folder of your choice on your machine. 
+  2. Once you have Node.js successfully installed, copy the code link from this repo and use the `git clone https://github.com/cshepscorp/README-generator.git` command to clone this repo into the folder of your choice on your machine. 
   3. Run `npm init` in the command line within the file where you've downloaded the app code. Feel free to customize the answers to the questions or not, depending on your preference. You can always make adjustments to the values later in your editor of choice.
   4. In order to run this application, you'll need to install the Inquirer package via npm - this was installed when you installed Node.js. Enter `npm install inquirer` in your command line to install Inquirer.
   5. Enter `node index.js` in your command line to run the generator.  Then fill out the questions as prompted. Your finished README file will be generated and can be found in the **dist/** folder. 
