@@ -1,6 +1,6 @@
 
   
-  # Team Profile Generator ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  # Project Name [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
   ## Table of Contents
   * [ Description ](#about)
@@ -8,34 +8,37 @@
   * [ Usage ](#usage)
   * [ License ](#license)
   * [ Badges ](#badges)
-  
-  
+  * [ Test Instructions ](#test)
+  * [ Contributing ](#contribution)
   * [ Questions ](#questions)
 
   <a name="about"></a>
   ## Description
-  Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
+  Description of Project
 
   <a name="installation"></a>
   ## Installation
-  npm install etc
+  Installation instructions
 
   <a name="usage"></a>
   ## Usage
-  Create a quick team member page using CLI
+  Usage information
 
-  
-  
+  <a name="test"></a>
+  ## Tests
+  How to test
 
-  
-  
+  <a name="contribution"></a>
+  ## Contributing
+  How to contribute
   
   <a name="license"></a>
   ## License
-  MIT - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. ([Read more about the MIT license](https://choosealicense.com/licenses/mit/))
+  GPL (GNU) - Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. ([Read more about the GPL (GNU) license](https://choosealicense.com/licenses/gpl-3.0/))
 
   <a name="questions"></a>
   ## Questions
   Feel free to reach out to me with any additional questions
-  * [Find me on GitHub](https://github.com/cshepscorp/)
-  * Email me at: sheppard.christy@gmail.com
+  * [Find me on GitHub](https://github.com/github/)
+  * Email me at: contact@gmail.com
+c
